@@ -1,0 +1,7 @@
+Add this to your virtual host conf file so routes can work correctly
+
+<Directory /var/www/project/public>
+    AllowOverride All
+    Order Allow,Deny
+    Allow from All
+</Directory>
