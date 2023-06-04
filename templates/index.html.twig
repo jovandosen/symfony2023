@@ -1,5 +1,24 @@
-{% if title %}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Movies Page
+{% endblock %}
+
+{% block body %}
+    {# This is comment example #}
+    {# 
+        {{ _self }} -> this will print index.html.twig
+                    -> _self is a global twig variable 
+
+        {{ _charset }} -> this will print UTF-8
+
+        {{ foo }} -> this is global variable, defined in packages/twig.yaml
+        {{ author }} -> this is global variable, defined in packages/twig.yaml
+    #}
     <h1>{{ title }}</h1>
-{% else %}
-    <h1>No title</h1>
-{% endif %}
+    <ul>
+        {% for movie in movies %}
+            <li>{{ movie }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
