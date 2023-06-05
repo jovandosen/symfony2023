@@ -31,14 +31,7 @@ class MoviesController extends AbstractController
 
         $repository = $this->em->getRepository(Movie::class);
 
-        $movies = $repository->getClassName();
-
-        dd($movies);
-
-        return $this->render('index.html.twig', [
-            'title' => 'List of movies',
-            'movies' => $movies
-        ]);
+        return $this->render('index.html.twig');
     }
 
     #[Route('/movies-test/{name}', name: 'app_movies_test', defaults: ['name' => null], methods: ['GET', 'HEAD'])]
